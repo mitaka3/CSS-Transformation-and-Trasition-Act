@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Flip Cards</title>
+    <style>
+        .flip-card {
+            width: 200px;
+            height: 300px;
+            perspective: 1000px;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .flip-card-inner {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+        }
+
+        .flip-card:hover .flip-card-inner.x-axis {
+            transform: rotateX(180deg);
+        }
+
+        .flip-card:hover .flip-card-inner.y-axis {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card:hover .flip-card-inner.z-axis {
+            transform: rotateZ(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: visible; /* Show the back face when flipped */
+        }
+
+        .flip-card-front {
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flip-card-front img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .flip-card-back {
+            background-color: #e74c3c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flip-card-back img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="flip-card">
+        <div class="flip-card-inner x-axis">
+            <div class="flip-card-front">
+                <img src="./assets/makima.png" alt="Image 1">
+            </div>
+            <div class="flip-card-back">
+                <img src="./assets/makima.png" alt="Rotates in X axes on 180 degrees on hover">
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner y-axis">
+            <div class="flip-card-front">
+                <img src="./assets/makima.png" alt="Image 2">
+            </div>
+            <div class="flip-card-back">
+                <img src="./assets/makima.png" alt="Rotates in Y axes on 180 degrees on hover">
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner z-axis">
+            <div class="flip-card-front">
+                <img src="./assets/makima.png" alt="Image 3">
+            </div>
+            <div class="flip-card-back">
+                <img src="./assets/makima.png" alt="Rotates in Z axes on 180 degrees on hover">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
